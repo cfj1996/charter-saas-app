@@ -1,6 +1,6 @@
 const path = require('path');
 const rewireReactHotLoader = require('react-app-rewire-hot-loader')
-const {override, fixBabelImports, addLessLoader, addWebpackAlias, useBabelRc} = require('customize-cra');
+const {override, fixBabelImports, addLessLoader, addWebpackAlias, useBabelRc, useEslintRc} = require('customize-cra');
 // path
 const resolveAlias = dir => path.join(__dirname, '.', dir)
 const hotLoader = () => (config, env) => {
@@ -33,12 +33,12 @@ module.exports = {
                 modifyVars: {
                     '@primary-color': '#a51d1d'
                 },
-                localIdentName: "[path]__[name]__[local]--[hash:base64:5]",
             }
         }),
         addWebpackAlias({
             '@': resolveAlias('src')
         }),
+        useEslintRc(),
         dropConsole(),
         hotLoader(),
         useBabelRc(),

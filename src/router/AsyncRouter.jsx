@@ -5,23 +5,29 @@
  * @userName cfj
  */
 import React from 'react';
-import {Redirect, Route} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import Home from '../page/Home/Index'
 import Desc from '../page/Details/Index'
 
 const AsyncRouter = () => {
-    if(localStorage.auth){
-        return <>
-            <Route path="/desc">
+    if(localStorage.auto){
+        return <Switch>
+            <Route exact path={'/'}>
+                <Redirect to={'/home'}/>
+            </Route>
+            <Route exact path={"/desc"}>
                 <Desc />
             </Route>
-            <Route path="/">
+            <Route exact path={"/home"}>
                 <Home />
             </Route>
-        </>
+            <Route path="*">
+                <p>404</p>
+            </Route>
+        </Switch>
     }
     return <Redirect to={{
-        pathname: '/'
+        pathname: '/login'
     }}/>
 }
 export default AsyncRouter

@@ -12,25 +12,21 @@ import {
 } from 'react-router-dom'
 import Login from "../page/LoginRegister/Login";
 import Register from "../page/LoginRegister/Register";
-import Home from "../page/Home/Index"
 
-// import AsyncRouter from './AsyncRouter'
+import AsyncRouter from './AsyncRouter'
 
 const AppRouter = () => {
     return <Router>
         <Switch>
-            <Route exact path="/">
-                <Home />
-            </Route>
-            <Route path={'login'}>
+            <Route path='/login'>
                 <Login />
             </Route>
-            <Route path={'register'}>
+            <Route path='/register'>
                 <Register />
             </Route>
-            {/*<Route path={'/'}>*/}
-            {/*    <AsyncRouter />*/}
-            {/*</Route>*/}
+            <Route path={'/'}>
+                <AsyncRouter />
+            </Route>
         </Switch>
     </Router>
 }

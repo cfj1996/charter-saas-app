@@ -5,7 +5,8 @@
  * @userName cfj
  */
 import React from 'react';
+
 const Login = () => {
-    return <div>登录</div>
-}
-export default Login
+  return <div>登录</div>;
+};
+export default Login;

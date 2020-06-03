@@ -4,9 +4,7 @@
  * @time 2020/6/1 5:28 下午
  * @userName cfj
  */
-import React from 'react';
+import React from "react"
 
-const Register = () => {
-  return <div>注册</div>;
-};
-export default Register;
+const Register = () => <div>注册</div>
+export default Register

@@ -4,10 +4,10 @@
  * @time 2020/6/1 5:29 下午
  * @userName cfj
  */
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react"
 
 const Index = () => {
-  useEffect(() => {});
-  return <div>主页</div>;
-};
-export default Index;
+  useEffect(() => {})
+  return <div>111</div>
+}
+export default Index

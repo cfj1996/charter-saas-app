@@ -1,38 +1,27 @@
 module.exports = {
   env: {
-    "browser": true,
-    "es6": true
+    browser: true,
+    es6: true,
+    node: true
   },
-  extends: [
-    "react-app",
-    "airbnb",
-    "plugin:prettier/recommended"
-  ],
+  extends: ["airbnb", "plugin:prettier/recommended"],
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly"
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: "module"
   },
-  plugins: [
-    "react",
-    "react-hooks",
-    "prettier",
-  ],
+  plugins: ["react", "react-hooks", "prettier"],
   rules: {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-filename-extension": [0],
-    "import/extensions":"off",
-    "indent": ["error", 2],
-    'prettier/prettier': [
-      'error',
-      {
-        printWidth: 120, //一行的字符数，如果超过会进行换行，默认为80
-        tabWidth: 2, //一个tab代表几个空格数，默认为2
-        semi: true
-      }
-    ],
+    "prettier/prettier": ["error"],
+    "react/prop-types": [0],
+    semi: [2, "never"]
   }
-};
+}
